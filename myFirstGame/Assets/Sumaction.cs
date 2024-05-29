@@ -14,13 +14,13 @@ public class Sumaction : MonoBehaviour
         sr = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         if (collision.gameObject.transform.localScale == this.gameObject.transform.localScale) {
             Destroy(collision.gameObject);
             this.gameObject.transform.localScale *= 1.5f;
             //cc.radius *= 1.5f;
-            sr.color = new Vector4(sr.color.r , sr.color.g / 1.5f, sr.color.b / 1.5f, 255);
+            sr.color = new Vector4(sr.color.r /1.1f , sr.color.g / 1.2f, sr.color.b, 255);
         }
     }
 }
